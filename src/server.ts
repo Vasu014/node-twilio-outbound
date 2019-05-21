@@ -10,12 +10,12 @@ const logger  = new ServerLogger().logger;
 const reqListener = new App().app;
 
 process.on('unhandledRejection', (reason: any, promise: Promise<any>) => {
-    logger.info('Encountered unhandledRejection ,shutting down');
+    logger.error('Encountered unhandledRejection ,shutting down');
     process.exit(1);
 });
 
 process.on('uncaughtException', (err: Error) => {
-    logger.info('Encountered uncaught exception. Shutting down');
+    logger.error('Encountered uncaught exception. Shutting down');
     process.exit(2);
 });
 

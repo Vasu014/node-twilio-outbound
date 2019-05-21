@@ -15,8 +15,8 @@ class TwilioController{
             create({
                 record: true,
                 url: 'http://demo.twilio.com/docs/voice.xml',
-                from: '+12564488610',
-                to: '+919850391119'
+                from: 'registered_twilio_number',
+                to: 'destination_number'
             }).then((call: any) => {
                 this.logger.info('Connecting to call now');
                 this.logger.info(call);
